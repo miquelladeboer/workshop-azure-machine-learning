@@ -8,7 +8,7 @@ In this tuturial, we are going to benchmark 15 different algoritms in order to c
 * Select the best model from a run with chilld runs
 
 # Pre-requirements #
-1. Completed lab [02_experiments](https://github.com/miquelladeboer/aml-mlops-workshop/blob/master/labs/02_experiments.md)
+1. Completed lab [02_experiments](https://github.com/miquelladeboer/workshop-azure-machine-learning/blob/master/labs/02_experiments.md)
 
 
 # Understand the non-azure / open source ml model code #
@@ -198,7 +198,6 @@ Running the code via Azure ML, we need to excecute two steps. First, we need to 
 
     As we have seen in the previous lab, the code is not submitting our logs to Azure ML. In order to do this, we need to submit the run as an experiment to Azure ML. Therefore we are going to create a submit file in the next part. 
 
-Note: The completed code can be found [here](https://github.com/miquelladeboer/aml-mlops-workshop/blob/master/code_labs/explore/train_15models.py)
 
 ## Part 2: Create the train_15models_submit.py file
 In this part, we are going to create the submit file.
@@ -281,4 +280,3 @@ In this part, we are going to create the submit file.
 
 7. Go to the portal and inspect the results
 
-Note: The completed code can be found [here](https://github.com/miquelladeboer/aml-mlops-workshop/blob/master/code_labs/explore/train_15models_submit.py)

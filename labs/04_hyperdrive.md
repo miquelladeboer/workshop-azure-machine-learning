@@ -11,7 +11,7 @@ Efficiently tune hyperparameters for your model using Azure Machine Learning. Hy
 * Select the best performing configuration for your model
 
 # Pre-requirements #
-1. Completed lab [03_childrun](https://github.com/miquelladeboer/aml-mlops-workshop/blob/master/labs/03_childrun.md)
+1. Completed lab [03_childrun](https://github.com/miquelladeboer/workshop-azure-machine-learning/blob/master/labs/03_childrun.md)
 2. Familiarize yourself with the concept of [Deep Learning on Azure ML]
 3. Read the documentation on [How to tune hyperparameters](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-tune-hyperparameters)
 4. Read the documentation on [Train Pytorch deep learning models at scale](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-train-pytorch)
@@ -181,8 +181,6 @@ Running the code via Azure ML, we need to excecute two steps. First, we need to 
     
     As we have seen in previous labs, we need to create a submit file to submit the run to Azure ML. We will do this in the next part.
 
-Note: The completed code can be found [here](https://github.com/miquelladeboer/aml-mlops-workshop/blob/master/code_labs/modeling/train.py)
-
 ## ALter the deeptrain_submit.py file
 
 1. Load required Azureml libraries
@@ -277,5 +275,3 @@ Note: The completed code can be found [here](https://github.com/miquelladeboer/a
 6. Run the script `code\explore\deeptrain_submit.py`
 You will get an error message.
 This error message occurs, because we tried to run our script locally. This is not possible for HyperDrive. If we want no run this, we need to use Azure ML compute. In the next tuturial we are goin to create remote compute and how to submit a run on remote compute.
-
-Note: The completed code can be found [here](https://github.com/miquelladeboer/aml-mlops-workshop/blob/master/code_labs/modeling/train_hyper_submit.py)

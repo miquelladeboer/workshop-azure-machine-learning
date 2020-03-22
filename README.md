@@ -5,10 +5,8 @@ Full end-to-end solution of text classifciation with Pytorch on Azure Machine Le
 
 ## Content 
 The resportoty contains te foolowing material:
-* [Powerpoint slides with theory](https://github.com/miquelladeboer/aml-mlops-workshop/tree/master/Powerpoints) 
-* [Follow along labs to practise](https://github.com/miquelladeboer/aml-mlops-workshop/tree/master/labs)
-* [Code with the in between steps of labs](https://github.com/miquelladeboer/aml-mlops-workshop/tree/master/codeperstep)
-* [Final code for demo/ example](https://github.com/miquelladeboer/aml-mlops-workshop/tree/master/codefinal)
+* [Powerpoint slides with theory](https://github.com/miquelladeboer/workshop-azure-machine-learning/tree/master/Powerpoints) 
+* [Follow along labs to practise](https://github.com/miquelladeboer/workshop-azure-machine-learning/tree/master/labs)
 
 The labs + final code follow the MLOps guidelines and best practices. For the template, look at: https://github.com/Azure/MLOps-TDSP-Template
 
@@ -66,4 +64,4 @@ Azure ML in the Enterprise
 * Custom Roles
 
 # Get started
-To get started, follow the setup file [01_setup](https://github.com/miquelladeboer/aml-mlops-workshop/blob/master/labs/01_setup.md)
+To get started, follow the setup file [01_setup](https://github.com/miquelladeboer/workshop-azure-machine-learning/blob/master/labs/01_setup.md)

@@ -7,13 +7,11 @@ Enhance the model creation process by tracking your experiments and monitoring r
 * Monitor the run
 * Inpect the results in Azure Machine Learning
 
-![](C:/Users/mideboer.EUROPE/Documents/GitHub/aml-mlops-workshop/Images/02_experiments.PNG)
-
 # Pre-requirements #
-1. Familiarize yourself with the concept of Azure Machine Learning by going though the [Introduction](https://github.com/miquelladeboer/aml-mlops-workshop/blob/master/Powerpoints/Module%201%20-%20Introduction.pptx)
-2. Familiarize yourself with the concept of experiments by going though [Experiments](https://github.com/miquelladeboer/aml-mlops-workshop/blob/master/Powerpoints/Module%202%20-%20Experiments.pptx)
+1. Familiarize yourself with the concept of Azure Machine Learning by going though the [Introduction](https://github.com/miquelladeboer/workshop-azure-machine-learning/blob/master/Powerpoints/Module%201%20-%20Introduction.pptx)
+2. Familiarize yourself with the concept of experiments by going though [Experiments](https://github.com/miquelladeboer/workshop-azure-machine-learning/blob/master/Powerpoints/Module%202%20-%20Experiments.pptx)
 3. Read the documentation on [Azure Machile Learning architecture](https://docs.microsoft.com/en-us/azure/machine-learning/concept-azure-machine-learning-architecture)
-4. Finished the setup file [01_setup](https://github.com/miquelladeboer/aml-mlops-workshop/blob/master/labs/01_setup.md)
+4. Finished the setup file [01_setup](https://github.com/miquelladeboer/workshop-azure-machine-learning/blob/master/labs/01_setup.md)
 
 
 # Understand the non-azure / open source ml model code #
@@ -105,8 +103,6 @@ We can caputure the results from our run and log the result to Azure Machine Lea
     ```
 Since we did not submit the run to Azue ML, the log metrics and model file are not logged yet. To log the metrics and model to Azure ML, we need to submit an experiment to the service. We will do this is a seprated python file `code/explore/train_1model.py` in the next part of this lab
 
-Note: The completed code can be found [here](https://github.com/miquelladeboer/aml-mlops-workshop/blob/master/code_labs/explore/train_1model.py)
-
 ## Part 2: Create the train_1model_submit.py file
 In this part, we are going to create the submit file.
 1. Load required Azureml libraries
@@ -166,5 +162,4 @@ In this part, we are going to create the submit file.
 
 6. Go to the portal to inspect the run history
 
-Note: The completed code can be found [here](https://github.com/miquelladeboer/aml-mlops-workshop/blob/master/code_labs/explore/train_1model_submit.py)
 

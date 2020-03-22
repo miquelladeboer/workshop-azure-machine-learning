@@ -4,7 +4,7 @@ In this lab, we are going to see how we can levarge Azure ML remote compute to s
 * Excecute a run on remote Azure ML GPU cluster
 
 # Pre-requirements #
-1. Completed lab [04_hyperdrive](https://github.com/miquelladeboer/aml-mlops-workshop/blob/master/labs/04_hyperdrive.md)
+1. Completed lab [04_hyperdrive](https://github.com/miquelladeboer/workshop-azure-machine-learning/blob/master/labs/04_hyperdrive.md)
 2. Familiarize yourself with the concept of HyperDrive [POWERPOINT]
 3. Read the documentation on [How to tune hyperparameters](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-tune-hyperparameters)
 4. Read the documentation on [Train Pytorch deep learning models at scale](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-train-pytorch)
@@ -63,9 +63,6 @@ To run the `code/modeling/train.py` on remote compute, we need to alter the `tra
 
 6. Go to the portal to inspect the run history
 
-Note: The completed code can be found [here](https://github.com/miquelladeboer/aml-mlops-workshop/blob/master/code_labs/modeling/train_hyper_submit_remote_cpu.py)
-
-
 #  Run the code on remote gpu cluster via Azure ML #
 To run the `traindeep.py` on remote compute, we need to alter the `train_hyper_submit.py` file. We are going to create a gpu compute target. In this turutial we choose from the NC-series.
 
@@ -104,7 +101,5 @@ We are going to use the `Standard_NC6`
 5. Run the script `train_hyper_submit.py`
 
 6. Go to the portal to inspect the run history
-
-Note: The completed code can be found [here](https://github.com/miquelladeboer/aml-mlops-workshop/blob/master/code_labs/modeling/train_hyper_submit_remote_gpu.py)
 
 
