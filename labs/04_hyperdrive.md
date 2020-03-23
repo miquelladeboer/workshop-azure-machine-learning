@@ -120,6 +120,7 @@ Running the code via Azure ML, we need to excecute two steps. First, we need to 
     ```
 
 4. close the run
+
     ```python
     run.complete()
     ```
@@ -131,7 +132,7 @@ Running the code via Azure ML, we need to excecute two steps. First, we need to 
     op.add_option("--learning_rate",
                   type=float, default=0.01)
     op.add_option("--num_epochs",
-                  type=int, default=2)
+                  type=int, default=20)
     op.add_option("--batch_size",
                   type=int,
                   default=150)
@@ -168,7 +169,7 @@ Running the code via Azure ML, we need to excecute two steps. First, we need to 
     hidden_size = hyperparameters["hidden_size"]
     ```
 
-7. Execute the refactored script `code/explore/train.py`
+7. Execute the refactored script `code/modeling/train.py`
     As an output you should get the following:
 
     ```python  
@@ -181,10 +182,11 @@ Running the code via Azure ML, we need to excecute two steps. First, we need to 
     
     As we have seen in previous labs, we need to create a submit file to submit the run to Azure ML. We will do this in the next part.
 
-## ALter the deeptrain_submit.py file
+## ALter the train_hyper_submit.py file
 
 1. Load required Azureml libraries
-    ```
+
+    ```python
     from azureml.train.hyperdrive import (
         BayesianParameterSampling,
         HyperDriveConfig, PrimaryMetricGoal)
@@ -199,12 +201,14 @@ Running the code via Azure ML, we need to excecute two steps. First, we need to 
     ```
 
 2. Load Azure ML workspace form config file
-    ```
+
+    ```python
     # load Azure ML workspace
     workspace = Workspace.from_config(auth=AzureCliAuthentication())
     ```
 
 3. Create an extimator to define the run configuration
+
     Note here that we are using a special PyTorch Estimator. The PyTorch estimator also supports distributed training across CPU and GPU clusters. You can easily run distributed PyTorch jobs and Azure Machine Learning will manage the orchestration for you. When submitting a training job, Azure ML runs your script in a conda environment within a Docker container. The PyTorch containers have the [following](https://docs.microsoft.com/en-us/python/api/azureml-train-core/azureml.train.dnn.pytorch?view=azure-ml-py) dependencies installed.
 
     We are setting the `distributed_training` to `MpiConfiguration()`. This way we allow for distributed training with Mpi as backend. Message Passing Interface (MPI) is a standardized and portable message-passing system developed for distributed and parallel computing. The `framework_version` is the Pytorch framework version that we are using. In our case this is 1.4. 
@@ -230,19 +234,21 @@ Running the code via Azure ML, we need to excecute two steps. First, we need to 
     ```
 
 4. Set search parameters
+
     In this step we are going to define the search space for hyperparameter tuning. These number are random. However, it is advised to use a search space based on prior knowledge or acedemic research in order to optimize the hyperparameter tuning.
 
     ```python
     # Set parameters for search
     param_sampling = BayesianParameterSampling({
-        "learning_rate": uniform(0.05, 0.1),
-        "num_epochs": choice(5, 10, 15),
-        "batch_size": choice(150, 200),
-        "hidden_size": choice(50, 100)
+        "learning_rate": uniform(10e-6, 1e0),
+        "num_epochs": choice(20, 30, 40),
+        "batch_size": choice(150, 300),
+        "hidden_size": choice(100, 200)
     })
     ```
 
 5. Define the Hyperdrive run configration
+
     Because we are running an HyperDrive for parameter tuning, we need to define the `HyperDriveConfig`. HyperDrive configuration includes information about hyperparameter space sampling, termination policy, primary metric, resume from configuration, estimator, and the compute target to execute the experiment runs on.
 
     ```python
@@ -273,5 +279,6 @@ Running the code via Azure ML, we need to excecute two steps. First, we need to 
     ```
 
 6. Run the script `code\explore\deeptrain_submit.py`
+
 You will get an error message.
 This error message occurs, because we tried to run our script locally. This is not possible for HyperDrive. If we want no run this, we need to use Azure ML compute. In the next tuturial we are goin to create remote compute and how to submit a run on remote compute.

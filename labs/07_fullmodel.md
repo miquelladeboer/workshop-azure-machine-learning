@@ -2,12 +2,13 @@
 Now that we have everything in place for the HyperDrive run, we want to use the hyperparameters from the best model, to train the model on the entire data set. In this lab we are going to retrieve the best model from the HyperDRiveRun and use the parameters from this model as argument to train the entire model
 
 The submit script is a bit diffent from the hyper_submit script. In this script we are going to take the following steps:
-- Retrieve the best model from the HyperDriveRun
-- Use the best parameters as an input for the full model
-- Use the entire dataset instead of a subset
-- Create new compute that us memory optimized
 
-1. Open the `traindeep_full_model_submit.py` file
+* Retrieve the best model from the HyperDriveRun
+* Use the best parameters as an input for the full model
+* Use the entire dataset instead of a subset
+-* Create new compute that us memory optimized
+
+1. Open the `traind_full_model_submit.py` file
 
 2.  Load the required packages:
     ```

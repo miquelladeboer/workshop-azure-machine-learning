@@ -1,7 +1,7 @@
 ## Lab 8: Pipelines ##
 In this lab, we are going to create a pipeline to execute the two steps of:
-- hyperparameter tuning
-- train full model
+* hyperparameter tuning
+* train full model
 We are going to create a pipeline for these steps, because the input of the full model script is dependent on he ouput of the hyperparameter tuning script. With pipelines, it is very easy to orchastrate this.
 Moreover, later we are going to implement tools for model monitoring. If our model is drifting, we want to retrain our model. Retraining the model consistst of the two steps mentioned above. In order to automate this, pipelines is a very good solution, 
 
@@ -145,13 +145,13 @@ The HyperDriveRun will produce a JSON file with the metrics from the run in it. 
 
 ## Creat Pipelinestep for full model
 We are now going to define the pipeline step. In this step we are going to make use of the PythonScriptStep. This is the stantard step of executing a Python script in a pipeline. We need to take the following steps in this part of the tuturial:
-    - Retrive the entire data from the Datasets
-    - Define the compute target
-    - Define the conda dependencies
-    - Define the Run COnfig
-    - Define the Pipeline step
-    - Add the step to the pipeline
-    - Run the script
+    * Retrive the entire data from the Datasets
+    * Define the compute target
+    * Define the conda dependencies
+    * Define the Run COnfig
+    * Define the Pipeline step
+    * Add the step to the pipeline
+    * Run the script
 
 1.  Retrieve datastore/datasets
     ```

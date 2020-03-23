@@ -243,6 +243,19 @@ In this part, we are going to create the submit file.
     )
     ```
 
+    Or
+    
+    ```python
+    # Define Run Configuration
+    est = Estimator(
+        entry_script='train_15models.py',
+        source_directory=os.path.dirname(os.path.realpath(__file__)),
+        compute_target='local',
+        user_managed=True
+        use_docker=False
+    )
+
+
 4. Define the ML experiment
 
     ```python
