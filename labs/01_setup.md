@@ -28,7 +28,7 @@ From a command line window, run  `conda create -n myenvworkshop python=3.6 anaco
 
 ## Clone the repository
 
-Clone the following git repository: git clone  https://github.com/Azure/aml-mlops-workshop
+Clone the following git repository: git clone  https://github.com/miquelladeboer/workshop-azure-machine-learning
 
 ## Open the cloned git repository in VS Code or your favorite IDE
 

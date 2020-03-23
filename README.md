@@ -1,4 +1,4 @@
-# aml-mlops-workshop
+# Azure Machine Learning Workshop
 Azure Machine Learning Workshop using MLOPS
 
 Full end-to-end solution of text classifciation with Pytorch on Azure Machine Learning using MLOps.
