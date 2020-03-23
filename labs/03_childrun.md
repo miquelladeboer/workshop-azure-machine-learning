@@ -148,7 +148,6 @@ Running the code via Azure ML, we need to excecute two steps. First, we need to 
 
 4. upload the .pkl file to the output folder
     
-    ```python
     The pkl file contains the model we have trained. We want to upload the model to the Azure Machine Learning Service. We need to create an outputs folder if one is not present yet where we can save the model at the top of the file.
 
     ```python
