@@ -130,6 +130,7 @@ Running the code via Azure ML, we need to excecute two steps. First, we need to 
     ```
 
 2. Create a child run
+
     For each algorithm in the loop, we are going to create a child run. This way we can store the metrics of the models in different child runs, so we can easily compare the models and select the best model for future training or maybe even model deployment for production. We are going to use the  `child_run()` statement for this. This is used to isolate part of a run into a subsection. This can be done for identifiable "parts" of a run that are interesting to separate, or to capture independent metrics across an interation of a subprocess. If an output directory is set for the child run, the contents of that directory will be uploaded to the child run record when the child is completed. 
 
     ```python
@@ -138,6 +139,7 @@ Running the code via Azure ML, we need to excecute two steps. First, we need to 
     ```
 
 3. Log the metric in the run
+
     Next, we are going to log the accuracy for every model in their own child run. This statement is the same as you would log your metrics to a parent run. 
 
     ```python
@@ -177,11 +179,13 @@ Running the code via Azure ML, we need to excecute two steps. First, we need to 
     ```
 
 5. close the child run
+
     ```python
     child_run.complete()
     ```
 
 6. Execute the refactored script `code/explore/train15.py`
+
     For every algorithm, as an output you should get something similar to the the following:
 
     ```python
@@ -253,6 +257,7 @@ In this part, we are going to create the submit file.
     ```
 
 6. Get the best results from the run
+
     Print the best results from the run:
 
     ```python

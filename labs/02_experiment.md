@@ -152,7 +152,7 @@ In this part, we are going to create the submit file.
 
     ```python
     # Define the ML experiment
-    experiment = Experiment(workspace, "newsgroups_train_15models")
+    experiment = Experiment(workspace, "newsgroups_train_1model")
     ```
 
 5. Submit the experiment
