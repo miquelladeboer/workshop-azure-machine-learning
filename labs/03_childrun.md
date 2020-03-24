@@ -183,7 +183,7 @@ Running the code via Azure ML, we need to excecute two steps. First, we need to 
     child_run.complete()
     ```
 
-6. Execute the refactored script `code/explore/train15.py`
+6. Execute the refactored script `code/explore/train_15models.py`
 
     For every algorithm, as an output you should get something similar to the the following:
 
@@ -244,7 +244,7 @@ In this part, we are going to create the submit file.
     ```
 
     Or
-    
+
     ```python
     # Define Run Configuration
     est = Estimator(
@@ -260,7 +260,7 @@ In this part, we are going to create the submit file.
 
     ```python
     # Define the ML experiment
-    experiment = Experiment(workspace, "newsgroups_train_15models")
+    experiment = Experiment(workspace, "newsgroups_train_benchmark_15models")
     ```
 
 5. Submit the experiment
@@ -279,12 +279,13 @@ In this part, we are going to create the submit file.
     Print the best results from the run:
 
     ```python
+    # Get the best results
     max_run_id = None
     max_accuracy = None
 
-    for run in experiment.get_runs():
-        run_metrics = run.get_metrics()
-        run_details = run.get_details()
+    for child in run.get_children():
+        run_metrics = child.get_metrics()
+        run_details = child.get_details()
         # each logged metric becomes a key in this returned dict
         accuracy = run_metrics["accuracy"]
         run_id = run_details["runId"]
@@ -299,6 +300,7 @@ In this part, we are going to create the submit file.
 
     print("Best run_id: " + max_run_id)
     print("Best run_id acuuracy: " + str(max_accuracy))
+
     ```
 
 7. Go to the portal and inspect the results

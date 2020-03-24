@@ -152,6 +152,19 @@ In this part, we are going to create the submit file.
     )
     ```
 
+    Or
+
+    ```python
+    # Define Run Configuration
+    est = Estimator(
+        entry_script='train_15models.py',
+        source_directory=os.path.dirname(os.path.realpath(__file__)),
+        compute_target='local',
+        user_managed=True
+        use_docker=False
+    )
+    ```
+    
 4. Define the ML experiment
 
     An Experiment is a class acts as a container of trials that represent multiple model runs. Within an experiment we can easily compare different runs of the same script with, for example, different models,parameters or data.
