@@ -131,17 +131,12 @@ Refactor the code in `code\Data_Acquisition_and_Understanding\define_dataset.py`
 
     ```python
     # Register dataset and sebset version for each data split
+    # Register dataset and sebset version for each data split
     for data_split in ['train', 'test']:
         # Create a TabularDataset from paths in datastore in split folder
         # Note that wildcards can be used
         datastore_paths = [
             (datastore, '{}/*.csv'.format(data_split))
-        ]
-
-        # Create a TabularDataset subset from paths in datastore in split folder
-        # Note that wildcards can be used
-        datastore_paths_subset = [
-            (datastore, '{}/*.csv'.format('subset_' + data_split))
         ]
 
         # Create a TabularDataset from paths in datastore
@@ -154,6 +149,20 @@ Refactor the code in `code\Data_Acquisition_and_Understanding\define_dataset.py`
             header=True
         )
 
+        # Register the defined dataset for later use
+        dataset.register(
+            workspace=ws,
+            name='newsgroups_{}'.format(data_split),
+            description='newsgroups data',
+            create_new_version=True
+        )
+
+        # Create a TabularDataset subset from paths in datastore in split folder
+        #Note that wildcards can be used
+        datastore_paths_subset = [
+            (datastore, '{}/*.csv'.format('subset_' + data_split))
+        ]
+
         # Create a TabularDataset from paths in datastore
         dataset_subset = Dataset.Tabular.from_delimited_files(
             path=datastore_paths_subset,
@@ -165,20 +174,13 @@ Refactor the code in `code\Data_Acquisition_and_Understanding\define_dataset.py`
         )
 
         # Register the defined dataset for later use
-            dataset.register(
-            workspace=ws,
-            name='newsgroups_{}'.format('subset_' + data_split),
-            description='newsgroups data',
-            create_new_version=True
-        )
-
-        # Register the defined dataset for later use
         dataset_subset.register(
             workspace=ws,
             name='newsgroups_{}'.format('subset_' + data_split),
             description='newsgroups data',
             create_new_version=True
         )
+
         ```
 5. Run the script   
 

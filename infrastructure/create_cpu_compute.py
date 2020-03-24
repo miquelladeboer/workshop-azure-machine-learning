@@ -12,7 +12,7 @@ cpu_cluster_name = "hypercomputecpu"
 
 # Verify that cluster does not exist already
 try:
-    cu_cluster = ComputeTarget(workspace=workspace, name=cpu_cluster_name)
+    cpu_cluster = ComputeTarget(workspace=workspace, name=cpu_cluster_name)
     print('Found existing cluster, use it.')
 except ComputeTargetException:
     compute_config = AmlCompute.provisioning_configuration(vm_size='STANDARD_D3_V2',

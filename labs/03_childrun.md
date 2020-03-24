@@ -251,7 +251,7 @@ In this part, we are going to create the submit file.
         entry_script='train_15models.py',
         source_directory=os.path.dirname(os.path.realpath(__file__)),
         compute_target='local',
-        user_managed=True
+        user_managed=True,
         use_docker=False
     )
 

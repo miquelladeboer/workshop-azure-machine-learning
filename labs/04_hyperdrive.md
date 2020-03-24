@@ -109,6 +109,7 @@ Running the code via Azure ML, we need to excecute two steps. First, we need to 
 3. upload the .pkl file to the output folder
     
     ```python
+    import os
     from sklearn.externals import joblib
     OUTPUTSFOLDER = "outputs"
 
@@ -122,7 +123,7 @@ Running the code via Azure ML, we need to excecute two steps. First, we need to 
 4. close the run
 
     ```python
-    run.complete()
+    run_logger.complete()
     ```
 
 5. add parameters to the script to `op = OptionParser()`
@@ -224,11 +225,14 @@ Running the code via Azure ML, we need to excecute two steps. First, we need to 
         distributed_training=MpiConfiguration(),
         framework_version='1.4',
         use_gpu=False,
-        conda_dependencies_file=os.path.join(
-            os.path.dirname(os.path.realpath(__file__)),
-            '../../',
-            'conda_dependencies.yml'
-        )
+        pip_packages=[
+        'numpy==1.15.4',
+        'pandas==0.23.4',
+        'scikit-learn==0.20.1',
+        'scipy==1.0.0',
+        'matplotlib==3.0.2',
+        'utils==0.9.0',
+        ],
     )
 
     ```
