@@ -191,7 +191,7 @@ jedi==0.14.1
 jeepney==0.4.3
 Jinja2==2.11.1
 jmespath==0.9.5
-joblib==0.14.1
+joblib==1.2.0
 jsmin==2.2.2
 json5==0.9.1
 jsondiff==1.2.0
